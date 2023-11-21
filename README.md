@@ -6,6 +6,6 @@ To identify if a problem can be solved using this pattern, we can check if :
 - You’re asked to find the longest/shortest substring, subarray, or a desired value
 
 This pattern can solve the following common problems:
-- Maximum sum subarray of size ‘K’ (easy)
-- Longest substring with ‘K’ distinct characters (medium)
-- String anagrams (hard)
+- Maximum sum subarray of size ‘K’
+- Longest substring with ‘K’ distinct characters
+- String anagrams
