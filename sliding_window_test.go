@@ -18,3 +18,14 @@ func TestMinSizeSubArraySumV1(t *testing.T) {
 
 	assert.Equal(t, expectedOutput, out)
 }
+func TestLengthOfLongestSubstring(t *testing.T) {
+	// Input: FELIPE
+	// Output: 5
+	// Explanation: The longest subarray is FELIP
+	str := "FELIPE"
+	expectedOutput := 5
+
+	out := lengthOfLongestSubstring(str)
+
+	assert.Equal(t, expectedOutput, out)
+}
