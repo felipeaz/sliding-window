@@ -68,3 +68,37 @@ func makeSubstringMapFromRunes(runes []rune, startPos, endPos int) map[rune]int 
 	}
 	return m
 }
+
+var (
+	_singleCharacterMatchSymbol = rune('?')
+	_anySequenceMatchSymbol     = rune('*')
+)
+
+func isMatch(s string, p string) bool {
+	sr := []rune(s)
+	pr := []rune(p)
+	lenp := len(pr)
+	lens := len(sr)
+
+	strmatch := true
+	for i := 0; i < lens; i++ {
+		// panic arr out of index
+		if i >= lenp {
+			strmatch = false
+			break
+		}
+		// * means every sequence ahead is acceptable
+		if pr[i] == _anySequenceMatchSymbol {
+			break
+		}
+		// immediatly return false if ch are not the same
+		if !match(sr[i], pr[i]) {
+			return false
+		}
+	}
+	return strmatch
+}
+
+func match(chs, chp rune) bool {
+	return chs == chp || chp == _singleCharacterMatchSymbol
+}
